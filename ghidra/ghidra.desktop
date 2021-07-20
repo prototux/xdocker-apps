@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Ghidra
+Type=Application
+Exec=xdocker ghidra
+Terminal=false

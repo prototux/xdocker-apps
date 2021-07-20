@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Cutter
+Type=Application
+Exec=xdocker cutter
+Terminal=false

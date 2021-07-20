@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Moonlight
+Exec=xdocker moonlight

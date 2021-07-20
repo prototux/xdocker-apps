@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Qutebrowser (private mode)
+StartupWMClass=qutebrowser
+Icon=qutebrowser
+Type=Application
+Exec=xdocker qutebrowser ":open -p %u"
+Terminal=false
+Keywords=Browser

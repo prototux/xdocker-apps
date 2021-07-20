@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Darktable
+Type=Application
+Exec=xdocker darktable
+Terminal=false

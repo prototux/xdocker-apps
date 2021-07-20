@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Gimp
+Type=Application
+Exec=xdocker gimp
+Terminal=false

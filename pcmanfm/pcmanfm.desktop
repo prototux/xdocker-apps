@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=File Browser
+Type=Application
+Exec=xdocker pcmanfm
+Terminal=false

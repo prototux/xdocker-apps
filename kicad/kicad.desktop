@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=KiCAD
+Type=Application
+Exec=xdocker kicad
+Terminal=false

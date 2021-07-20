@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Chitubox
+Type=Application
+Exec=xdocker chitubox
+Terminal=false

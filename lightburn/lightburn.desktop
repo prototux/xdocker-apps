@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Lightburn
+Type=Application
+Exec=xdocker lightburn
+Terminal=false
