@@ -1,0 +1,3 @@
+OPTS_XORG=true
+OPTS_MOUNTS=true
+DOCKER_ARGS="-v $HOME/Pictures:$HOME/Pictures"

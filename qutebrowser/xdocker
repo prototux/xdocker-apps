@@ -1,0 +1,7 @@
+OPTS_XORG=true
+OPTS_PULSE=true
+OPTS_DL=true
+OPTS_CONFIG=true
+OPTS_DATA=true
+DOCKER_ARGS="-v /dev/dri:/dev/dri"
+APP_CMD="$@"

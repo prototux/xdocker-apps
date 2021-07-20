@@ -1,0 +1,4 @@
+OPTS_XORG=true
+OPTS_PULSE=true
+OPTS_CONFIG=true
+DOCKER_ARGS="--privileged"

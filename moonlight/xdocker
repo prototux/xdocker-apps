@@ -1,0 +1,6 @@
+OPTS_XORG=true
+OPTS_PULSE=true
+OPTS_CONFIG=true
+OPTS_DATA=true
+DOCKER_ARGS="--privileged --mount type=bind,source=/dev/input,target=/dev/input --device /dev/input"
+APP_CMD="$@"
