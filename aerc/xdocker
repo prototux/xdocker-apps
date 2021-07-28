@@ -1,2 +1,3 @@
 OPTS_CONFIG=true
 OPTS_DATA=true
+DOCKER_ARGS="-it"
