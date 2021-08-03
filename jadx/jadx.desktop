@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=JADX
+Type=Application
+Exec=xdocker jadx
+Terminal=false
