@@ -1,0 +1,29 @@
+FROM xbase as builder
+
+## Builder base
+ENV MAKEFLAGS="-j8"
+RUN sudo pacman -S --noconfirm base-devel git
+
+## Make cef-minimal
+RUN sudo pacman -S --noconfirm cmake nss alsa-lib libxss pango libxcursor libxrandr libxcomposite at-spi2-atk && git clone https://aur.archlinux.org/cef-minimal-3770-bin.git && cd cef-minimal-3770-bin && makepkg -i --noconfirm && cd ..
+
+## Make obs (hardware encoder)
+RUN sudo pacman -S --noconfirm at-spi2-atk ffmpeg jansson libxinerama qt5-x11extras mbedtls libxrandr nss libxss cmake x264 jack vlc swig pipewire && git clone https://aur.archlinux.org/obs-hevc-vaapi-git.git && cd obs-hevc-vaapi-git && makepkg -i --noconfirm && ls && cd ..
+
+## Make obs plugins
+### scrab
+RUN sudo pacman -S --noconfirm luajit gtk-update-icon-cache && git clone https://aur.archlinux.org/obs-scrab.git && cd obs-scrab && makepkg && cd ..
+
+# Final image
+FROM xbase
+
+RUN sudo pacman -S --noconfirm vlc qt5-svg qt5-x11extras libxcomposite libusbmuxd libxcursor libxrandr libxss noto-fonts ffmpeg pipewire xcb-util-image libxinerama libxkbcommon-x11 gtk-update-icon-cache luajit libva-mesa-driver intel-media-driver
+
+# Copy built packages
+COPY --from=builder /home/jason/cef-minimal-3770-bin/cef-minimal-3770-bin-75.1.14-3-x86_64.pkg.tar.zst /tmp/cef-minimal-3770-bin-75.1.14-3-x86_64.pkg.tar.zst
+COPY --from=builder /home/jason/obs-hevc-vaapi-git/obs-hevc-vaapi-git-27.0.0.rc2.r32.g59603f47a-1-x86_64.pkg.tar.zst /tmp/obs-hevc-vaapi-git-27.0.0.rc2.r32.g59603f47a-1-x86_64.pkg.tar.zst
+COPY --from=builder /home/jason/obs-scrab/obs-scrab-1.1-1-x86_64.pkg.tar.zst /tmp/obs-scrab-1.1-1-x86_64.pkg.tar.zst
+
+RUN sudo pacman -U --noconfirm /tmp/cef-minimal-3770-bin-75.1.14-3-x86_64.pkg.tar.zst /tmp/obs-hevc-vaapi-git-27.0.0.rc2.r32.g59603f47a-1-x86_64.pkg.tar.zst /tmp/obs-scrab-1.1-1-x86_64.pkg.tar.zst
+
+CMD ["/usr/bin/obs"]
