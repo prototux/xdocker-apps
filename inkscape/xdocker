@@ -1,0 +1,3 @@
+OPTS_XORG=true
+OPTS_DL=true
+OPTS_DOCS=true
