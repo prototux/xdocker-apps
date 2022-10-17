@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Homebank
+Type=Application
+Exec=xdocker homebank
+Terminal=false

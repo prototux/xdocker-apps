@@ -1,5 +1,7 @@
 FROM xbase
 
-RUN sudo pacman -S --noconfirm pcmanfm
+RUN sudo pacman -S --noconfirm pcmanfm-qt oxygen-icons
 
-CMD ["/usr/bin/pcmanfm"]
+ENV NO_AT_BRIDGE=1
+
+CMD ["/usr/bin/pcmanfm-qt"]

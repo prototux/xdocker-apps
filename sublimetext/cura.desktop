@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Cura
+Type=Application
+Exec=xdocker cura
+Terminal=false

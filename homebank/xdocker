@@ -1,0 +1,4 @@
+OPTS_XORG=true
+OPTS_DOCS=true
+OPTS_DATA=true
+OPTS_CONFIG=true

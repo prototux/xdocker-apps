@@ -7,6 +7,8 @@ RUN sudo pacman -S --noconfirm base-devel git
 ## Make cef-minimal
 RUN sudo pacman -S --noconfirm cmake nss alsa-lib libxss pango libxcursor libxrandr libxcomposite at-spi2-atk && git clone https://aur.archlinux.org/cef-minimal-3770-bin.git && cd cef-minimal-3770-bin && makepkg -i --noconfirm && cd ..
 
+RUN git clone https://aur.archlinux.org/vlc-luajit.git && cd vlc-luajit && makepkg -i --noconfirm && cd ..
+
 ## Make obs (hardware encoder)
 RUN sudo pacman -S --noconfirm at-spi2-atk ffmpeg jansson libxinerama qt5-x11extras mbedtls libxrandr nss libxss cmake x264 jack vlc swig pipewire && git clone https://aur.archlinux.org/obs-hevc-vaapi-git.git && cd obs-hevc-vaapi-git && makepkg -i --noconfirm && ls && cd ..
 
